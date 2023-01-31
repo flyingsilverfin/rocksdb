@@ -111,9 +111,9 @@ if test -z "$TARGET_OS"; then
     TARGET_OS=`uname -s`
 fi
 
-if test -z "$TARGET_ARCHITECTURE"; then
-    TARGET_ARCHITECTURE=`uname -m`
-fi
+#if test -z "$TARGET_ARCHITECTURE"; then
+#    TARGET_ARCHITECTURE=`uname -m`
+#fi
 
 if test -z "$CLANG_SCAN_BUILD"; then
     CLANG_SCAN_BUILD=scan-build
@@ -886,6 +886,7 @@ echo "PROFILING_FLAGS=$PROFILING_FLAGS" >> "$OUTPUT"
 echo "FIND=$FIND" >> "$OUTPUT"
 echo "WATCH=$WATCH" >> "$OUTPUT"
 echo "FOLLY_PATH=$FOLLY_PATH" >> "$OUTPUT"
+echo "raw TARGET_ARCHITECTURE=$TARGET_ARCHITECTURE" >> "$OUTPUT"
 
 # This will enable some related identifiers for the preprocessor
 if test -n "$JEMALLOC"; then
